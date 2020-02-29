@@ -1,0 +1,16 @@
+.header .ant-input {
+  width: 480px;
+  margin: 0 8px 8px 0;
+}
+.ant-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper {
+  margin: 100px auto;
+  text-align: center;
+}
+li {
+  list-style: none;
+  width: 1000px;
+}
