@@ -20,7 +20,7 @@ const get = url => {
     headers
   })
     .then(res => {
-      handleResponse(url, res);
+      return handleResponse(url, res);
     })
     .catch(err => {
       console.error(`Request failed. Url = ${url}. Message=${err}`);
@@ -35,7 +35,7 @@ const post = (url, data) => {
     headers
   })
     .then(res => {
-      handleResponse(url, res);
+      return handleResponse(url, res);
     })
     .catch(err => {
       console.error(`Request failed. Url = ${url}. Message=${err}`);

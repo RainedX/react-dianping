@@ -1,3 +1,0 @@
-export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
-export const ADD_TODO_ITEM = 'ADD_TODO_ITEM';
-export const INIT_LIST = 'INIT_LIST';
