@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import './index.css'
-
 class Header extends Component {
   render() {
+    const { grey, title } = this.props;
+    const backgroundColor = grey ? "#f0f0f0" : "#fff";
     return (
-      <div>Header</div>
-    )
+      <header className="header" style={{ backgroundColor: backgroundColor }}>
+        <div className="header__back">
+          返回
+        </div>
+        <div className="header__title">{title}</div>
+      </header>
+    );
   }
 }
 

@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './index.css'
-
 class Loading extends Component {
-  render() {
-    return (
-      <div>Loading</div>
-    )
-  }
+    render() {
+        return (
+            <div className='loading'>
+                <div className='loading__img'></div>
+                <span>正在加载...</span>
+            </div>
+        );
+    }
 }
 
 export default Loading;
