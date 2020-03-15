@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import ErrorToast from "./components/ErrorToast";
 import { actions as appActions, getError } from "./redux/modules/app";
 import Home from "./containers/Home";
+import ProductDetail from './containers/ProductDetail';
+
 class App extends Component {
   render() {
     const { error, appActions: { clearError } } = this.props;
@@ -12,7 +14,8 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route path="/" component={Home} exact />
+            <Route path="/detail/:id" component={ProductDetail}/>
           </Switch>
         </Router>
         {error ? <ErrorToast msg={error} clearError={clearError} /> : null}
