@@ -77,6 +77,11 @@ export const actions = {
   },
   loadDiscounts: () => {
     return (dispatch, getState) => {
+      //判断是否使用缓存
+      const { ids } = getState().home.discounts;
+      if (ids.length > 0) {
+        return null;
+      }
       const endpoint = url.getProductList(
         params.PATH_DISCOUNTS,
         0,
@@ -87,7 +92,7 @@ export const actions = {
   }
 };
 
-const likesReducer = (state = initialState.likes, action) => {
+const likes = (state = initialState.likes, action) => {
   switch (action.type) {
     case types.FETCH_LIKES_REQUEST:
       return { ...state, isFetching: true };
@@ -105,7 +110,7 @@ const likesReducer = (state = initialState.likes, action) => {
   }
 };
 
-const discountsReducer = (state = initialState.discounts, action) => {
+const discounts = (state = initialState.discounts, action) => {
   switch (action.type) {
     case types.FETCH_DISCOUNTS_REQUEST:
       return { ...state, isFetching: true };
@@ -122,6 +127,24 @@ const discountsReducer = (state = initialState.discounts, action) => {
   }
 };
 
-const reducer = combineReducers({ likesReducer, discountsReducer });
+const reducer = combineReducers({ likes, discounts });
 
+//selectors
+//获取猜你喜欢state
+export const getLikes = state => {
+  return state.home.likes.ids.map(id => {
+    return state.entities.products[id]
+  })
+}
+
+//获取特惠商品state
+export const getDiscounts = state => {
+  return state.home.discounts.ids.map(id => {
+    return state.entities.products[id];
+  })
+}
+//猜你喜欢当前分页码
+export const getPageCountOfLikes = state => {
+  return state.home.likes.pageCount;
+}
 export default reducer;
