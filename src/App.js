@@ -8,6 +8,7 @@ import Home from "./containers/Home";
 import ProductDetail from './containers/ProductDetail';
 import Search from "./containers/Search";
 import SearchResult from "./containers/SearchResult";
+import Login from "./containers/Login";
 class App extends Component {
   render() {
     const { error, appActions: { clearError } } = this.props;
@@ -16,6 +17,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/" component={Home} exact />
+            <Route path="/login" component={Login} />
             <Route path="/detail/:id" component={ProductDetail} />
             <Route path="/search" component={Search} />
             <Route path="/search_result" component={SearchResult} />
