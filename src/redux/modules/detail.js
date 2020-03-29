@@ -116,3 +116,8 @@ const relatedShop = (state = initialState.relatedShop, action) => {
 const reducer = combineReducers({ product, relatedShop })
 
 export default reducer;
+
+// selectors
+//获取商品详情
+
+export const getProduct = (state, id) => getProductDetail(state, id)
