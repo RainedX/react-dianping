@@ -9,6 +9,9 @@ import ProductDetail from './containers/ProductDetail';
 import Search from "./containers/Search";
 import SearchResult from "./containers/SearchResult";
 import Login from "./containers/Login";
+import PrivateRoute from "./containers/PrivateRoute";
+import User from "./containers/User";
+import Purchase from "./containers/Purchase";
 class App extends Component {
   render() {
     const { error, appActions: { clearError } } = this.props;
@@ -18,6 +21,7 @@ class App extends Component {
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/login" component={Login} />
+            <PrivateRoute path="/user" component={User} />
             <Route path="/detail/:id" component={ProductDetail} />
             <Route path="/search" component={Search} />
             <Route path="/search_result" component={SearchResult} />
