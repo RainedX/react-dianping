@@ -25,6 +25,7 @@ class App extends Component {
             <Route path="/detail/:id" component={ProductDetail} />
             <Route path="/search" component={Search} />
             <Route path="/search_result" component={SearchResult} />
+            <PrivateRoute path="/purchase/:id" component={Purchase} />
           </Switch>
         </Router>
         {error ? <ErrorToast msg={error} clearError={clearError} /> : null}
