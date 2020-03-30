@@ -5,6 +5,7 @@ import detail from './detail';
 import app from './app';
 import search from "./search";
 import login from "./login";
+import user from './user';
 /** 
  *                            1.UI状态 例如多选框是否选中，输入框信息等
  *               页面状态 ===>
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   detail,
   app,
   search,
-  login
+  login,
+  user
 });
 
 export default rootReducer;
